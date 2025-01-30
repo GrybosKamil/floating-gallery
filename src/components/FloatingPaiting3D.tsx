@@ -14,6 +14,7 @@ export type FloatingPainting3DProps = {
   initialPosition?: THREE.Vector3;
   initialRotation?: THREE.Euler;
   initialVelocity?: THREE.Vector3;
+  onClick: (painting: Painting) => void;
 };
 
 export function FloatingPaiting3D({
@@ -21,6 +22,7 @@ export function FloatingPaiting3D({
   initialPosition,
   initialRotation,
   initialVelocity,
+  onClick,
 }: FloatingPainting3DProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useLoader(THREE.TextureLoader, painting.url);
@@ -77,6 +79,7 @@ export function FloatingPaiting3D({
       name={painting.title}
       position={position}
       rotation={rotation}
+      onClick={() => onClick(painting)}
     >
       <boxGeometry args={[dimensions.width, dimensions.height, 0.1]} />
       <meshBasicMaterial attach="material-0" color="black" />
