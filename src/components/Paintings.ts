@@ -3,7 +3,7 @@ import { Painting } from "./Painting";
 export const PAITINGS: Painting[] = [
   {
     id: 1,
-    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/474071292_1209001147389548_2222692281247739445_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=G5jhFgPyv6EQ7kNvgGKaWVW&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=ALlRGCHem5j6jI5-Ykvyq1c&oh=00_AYCxqwph-Uq2VSFA4KGmnvCjo6dK1g9pjVt0AfgUULL5pA&oe=67A07A88",
+    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/474071292_1209001147389548_2222692281247739445_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=utnuvfDPHY0Q7kNvgFqwyyI&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=A3p4Sxvm4Dut_LYcelZZ0Dp&oh=00_AYBjc-O5I7Ais6_3FqBz0tIZ9PodeJpghlWon-EegXnnow&oe=67A71208",
     title: "Diana",
     year: 2024,
     dimensions: {
@@ -13,7 +13,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 2,
-    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/472842433_1206424440980552_8993786080163935750_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=_9OuwMWBFgwQ7kNvgGCvjHE&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=AsQnAch7B2XeJ30HHApPxYZ&oh=00_AYBr7C1IK0mzBSXvjmGd1xOW2JZsmicWGwobj-m3NMrEXQ&oe=67A08D2E",
+    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/472842433_1206424440980552_8993786080163935750_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EcbUbSOtGKcQ7kNvgE-e0WL&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=AWZceJni_zf9gb9CzC1Sf4n&oh=00_AYAXKsuVYX7x8p2km_AofDUq_CX4UL3jVrYaiaTWizsW1Q&oe=67A724AE",
     title: "Zmeczony Kamil",
     year: 2024,
     dimensions: {
@@ -23,7 +23,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 3,
-    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/473801418_1208734630749533_3245641589878236067_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TRW1Z_O55dkQ7kNvgGRjVYO&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=Amj4-LgssfMcn3LUPJJnGUH&oh=00_AYC5OhWGjZtGlvHj2Ohypygj0N6XNh5JDg-epMznFFOoQQ&oe=67A08D1D",
+    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/473801418_1208734630749533_3245641589878236067_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=a0inkf7tz5kQ7kNvgGJhA2s&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=ATcHpLz8FNp5QYaPhOArAZN&oh=00_AYA1iqcnhkhkMrA-PcohMr8y3mwfYqxJfP5Ok7LelCkD3w&oe=67A6EC5D",
     title: "Samotnosc duszy",
     year: 2024,
     dimensions: {
@@ -33,7 +33,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 4,
-    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/473260062_1203615734594756_6946190618792950724_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=pEPTCe3SiD4Q7kNvgFqIdu5&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=ArURXV7v6Cz7CQN9I0ULxSb&oh=00_AYAIiiXiTOZQ0Y92p9IgjVtkvXm44az3kR5nMw8csmrtQQ&oe=67A07E17",
+    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/473260062_1203615734594756_6946190618792950724_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=m1wr6BP-BS8Q7kNvgHNxmop&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=AIFkwRfKzGQ1jvBU_O1WJz5&oh=00_AYCSbCe1DY7iM1IDRo_oOC94Q4-tL_ppW94DWnPWS1SCiw&oe=67A71597",
     title: "Koci demon",
     year: 2024,
     dimensions: {
@@ -43,7 +43,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 5,
-    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/472618115_1201670354789294_2865972618404756275_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=nWWhP7frIm8Q7kNvgFuE4UO&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=Ar3qVmZsiY33B8iuSFbULjF&oh=00_AYB-Lh2T1f5eScT3JLV_EJYBWG73RYPvjyPtIb6nQqSb5w&oe=67A07BFB",
+    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/472618115_1201670354789294_2865972618404756275_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=VtGgA40nwrEQ7kNvgGmL_Ay&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=AdqbYPvASJgB041IRlAGx9G&oh=00_AYD9wmtiBvdHcbxoaaZ06uGzhmdnL8p7GLPIcCmt8lSKWQ&oe=67A7137B",
     title: "Luna z bombkami",
     year: 2024,
     dimensions: {
@@ -53,7 +53,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 6,
-    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/472611545_1201641591458837_4475440041458088703_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=4nN_SFSUutAQ7kNvgGJBKda&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=Ap20_bNEQxOSdrcepT-WtFV&oh=00_AYD1MoCgcoWCLxyoIQ5aHshJW87Ir1yMa1NBJJuh1Ur4Tw&oe=67A0776C",
+    url: "https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/472611545_1201641591458837_4475440041458088703_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=OInv_HqBrgEQ7kNvgEVGE7U&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=AKEitcEQdQ1Tyvmp2zssVTF&oh=00_AYAM2Q_YuC941Nwn5LBJ7dcg2081BVWZoS0zt3zsxiu94g&oe=67A70EEC",
     title: "Marzenie",
     year: 2024,
     dimensions: {
@@ -63,7 +63,7 @@ export const PAITINGS: Painting[] = [
   },
   {
     id: 7,
-    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/468422105_1169619864661010_6452847277924777604_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=0ImNO6DhiCsQ7kNvgGiF2Ym&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=AxmdrSKvyUWFrRnlRUd2xbr&oh=00_AYAyvpCJPwVA2K6PGgADhDdw8txIPMz79J4wbnTXvWFUjA&oe=67A07C0E",
+    url: "https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/468422105_1169619864661010_6452847277924777604_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=n9lkivbjrOMQ7kNvgFb7wpY&_nc_zt=23&_nc_ht=scontent-waw2-2.xx&_nc_gid=Ats_n_rI-7ql5GoRBD0cUq7&oh=00_AYBgUiT1t0KGDNdUsR74NYTS6PzYep7-RUamwF60Y_x68g&oe=67A7138E",
     title: "Madness III",
     year: 2024,
     dimensions: {
