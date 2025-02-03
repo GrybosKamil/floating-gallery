@@ -1,5 +1,6 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { ErrorBoundary } from "react-error-boundary";
 import * as THREE from "three";
 import { FloatingPaiting3D } from "./FloatingPaiting3D";
 import { PAITINGS } from "./Paintings";
@@ -24,8 +25,18 @@ export function GalleryScene() {
       <OrbitControls position={controlPosition} />
 
       {PAITINGS.map((painting) => (
-        <FloatingPaiting3D key={painting.id} painting={painting} />
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}
+          key={painting.id + "-error"}
+        >
+          <FloatingPaiting3D key={painting.id} painting={painting} />
+        </ErrorBoundary>
       ))}
     </Canvas>
   );
+}
+
+function ErrorFallback({ error }: { error: Error }) {
+  console.log({ error });
+  return <></>;
 }

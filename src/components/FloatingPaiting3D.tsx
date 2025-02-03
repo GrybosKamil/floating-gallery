@@ -42,8 +42,6 @@ export function FloatingPaiting3D({
     ? initialRotation
     : generateInitialRotation();
 
-  console.log({ painting, position, rotation, velocity, rotationDirection });
-
   useFrame(() => {
     if (meshRef.current) {
       meshRef.current.rotation.x += rotationDirection.x;
