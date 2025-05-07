@@ -1,5 +1,5 @@
-import { GalleryScene } from "./components/GalleryScene";
+import { RandomeMoveGalleryScene } from "./components/RandomMoveGalleryScene";
 
 export default function App() {
-  return <GalleryScene />;
+  return <RandomeMoveGalleryScene />;
 }

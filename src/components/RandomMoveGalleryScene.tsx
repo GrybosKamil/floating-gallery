@@ -11,7 +11,7 @@ import { PAITINGS } from "./Paintings";
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
-export function GalleryScene() {
+export function RandomeMoveGalleryScene() {
   const [selectedPainting, setSelectedPainting] = useState<Painting | null>(
     null,
   );
