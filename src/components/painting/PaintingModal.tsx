@@ -1,4 +1,4 @@
-import { Painting } from "../../types/paiting.types";
+import { Painting } from "../../types/painting.types";
 import "./PaintingModal.css";
 
 type Props = {
@@ -29,7 +29,7 @@ export function PaintingModal({ painting, onClose }: Props) {
         <h4>
           {painting.dimensions.width} x {painting.dimensions.height}
         </h4>
-        <img id="paiting-modal-img" src={painting.url} alt={painting.title} />
+        <img id="painting-modal-img" src={painting.url} alt={painting.title} />
       </div>
     </div>
   );

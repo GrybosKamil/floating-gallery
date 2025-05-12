@@ -3,22 +3,22 @@ import { Canvas } from "@react-three/fiber";
 import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import * as THREE from "three";
-import { Painting } from "../../types/paiting.types";
-import { FloatingPaiting3D } from "../../components/FloatingPaiting3D";
-import { PaintingModal } from "../../components/paiting/PaintingModal";
-import { PAITINGS } from "../../components/paiting/Paintings";
+import { Painting } from "../../types/painting.types";
+import { FloatingPainting3D } from "../../components/painting/FloatingPainting3D";
+import { PaintingModal } from "../../components/painting/PaintingModal";
+import { PAINTINGS } from "../../components/painting/Paintings";
 
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
 export function RandomeMoveGalleryScene() {
   const [selectedPainting, setSelectedPainting] = useState<Painting | null>(
-    null,
+    null
   );
   const controlPosition = new THREE.Vector3(0, 0, 0);
 
   const prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)",
+    "(prefers-color-scheme: dark)"
   ).matches;
 
   const backgroundColor = prefersDarkMode
@@ -39,12 +39,12 @@ export function RandomeMoveGalleryScene() {
         <ambientLight intensity={0.5} />
         <OrbitControls position0={controlPosition} />
 
-        {PAITINGS.map((painting) => (
+        {PAINTINGS.map((painting) => (
           <ErrorBoundary
             FallbackComponent={ErrorFallback}
             key={painting.url + "-error"}
           >
-            <FloatingPaiting3D
+            <FloatingPainting3D
               key={painting.url}
               painting={painting}
               onClick={() => handlePaintingClick(painting)}

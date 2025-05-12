@@ -1,6 +1,6 @@
-import { Painting } from "../../types/paiting.types";
+import { Painting } from "../../types/painting.types";
 
-export const PAITINGS: Painting[] = [
+export const PAINTINGS: Painting[] = [
   {
     url: "https://i.postimg.cc/473LMHsc/Diana-2024.jpg",
     title: "Diana",

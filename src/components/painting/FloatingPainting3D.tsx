@@ -1,7 +1,7 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Painting } from "../types/paiting.types";
+import { Painting } from "../../types/painting.types";
 
 const SPACE_LIMITS = {
   x: { min: -5, max: 5 },
@@ -17,7 +17,7 @@ export type FloatingPainting3DProps = {
   onClick: (painting: Painting) => void;
 };
 
-export function FloatingPaiting3D({
+export function FloatingPainting3D({
   painting,
   initialPosition,
   initialRotation,
@@ -104,7 +104,7 @@ function generateRotationDirection() {
   return new THREE.Euler(
     getRandomNumberInRange(-0.005, 0.005),
     getRandomNumberInRange(-0.005, 0.005),
-    getRandomNumberInRange(-0.005, 0.005),
+    getRandomNumberInRange(-0.005, 0.005)
   );
 }
 
@@ -112,7 +112,7 @@ function generateInitialRotation() {
   return new THREE.Euler(
     getRandomNumberInRange(0, Math.PI * 2),
     getRandomNumberInRange(0, Math.PI * 2),
-    getRandomNumberInRange(0, Math.PI * 2),
+    getRandomNumberInRange(0, Math.PI * 2)
   );
 }
 
@@ -120,7 +120,7 @@ function generateInitialPosition() {
   return new THREE.Vector3(
     getRandomNumberInDefaultRange(),
     getRandomNumberInDefaultRange(),
-    getRandomNumberInDefaultRange(),
+    getRandomNumberInDefaultRange()
   );
 }
 
@@ -128,6 +128,6 @@ function generateInitialVelocity() {
   return new THREE.Vector3(
     getRandomNumberInRange(-0.01, 0.01),
     getRandomNumberInRange(-0.01, 0.01),
-    getRandomNumberInRange(-0.01, 0.01),
+    getRandomNumberInRange(-0.01, 0.01)
   );
 }
