@@ -1,7 +1,7 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Painting } from "./Painting";
+import { Painting } from "../types/paiting.types";
 
 const SPACE_LIMITS = {
   x: { min: -5, max: 5 },

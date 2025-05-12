@@ -1,12 +1,12 @@
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { ErrorBoundary } from "react-error-boundary";
 import { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import * as THREE from "three";
-import { FloatingPaiting3D } from "./FloatingPaiting3D";
-import { Painting } from "./Painting";
-import { PaintingModal } from "./PaintingModal";
-import { PAITINGS } from "./Paintings";
+import { Painting } from "../../types/paiting.types";
+import { FloatingPaiting3D } from "../../components/FloatingPaiting3D";
+import { PaintingModal } from "../../components/PaintingModal";
+import { PAITINGS } from "../../components/Paintings";
 
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
