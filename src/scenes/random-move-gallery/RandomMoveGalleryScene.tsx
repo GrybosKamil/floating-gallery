@@ -5,8 +5,8 @@ import { ErrorBoundary } from "react-error-boundary";
 import * as THREE from "three";
 import { Painting } from "../../types/paiting.types";
 import { FloatingPaiting3D } from "../../components/FloatingPaiting3D";
-import { PaintingModal } from "../../components/PaintingModal";
-import { PAITINGS } from "../../components/Paintings";
+import { PaintingModal } from "../../components/paiting/PaintingModal";
+import { PAITINGS } from "../../components/paiting/Paintings";
 
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";

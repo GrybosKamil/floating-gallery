@@ -1,4 +1,4 @@
-import { Painting } from "../types/paiting.types";
+import { Painting } from "../../types/paiting.types";
 import "./PaintingModal.css";
 
 type Props = {
@@ -11,7 +11,7 @@ export function PaintingModal({ painting, onClose }: Props) {
   const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
   const prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)",
+    "(prefers-color-scheme: dark)"
   ).matches;
 
   const backgroundColor = prefersDarkMode
@@ -24,8 +24,11 @@ export function PaintingModal({ painting, onClose }: Props) {
         <span className="close" onClick={onClose}>
           &times;
         </span>
-        <h2>{painting.title}</h2>
-        <h4>{painting.year}</h4>
+        <h1>{painting.title}</h1>
+        <h2>{painting.year}</h2>
+        <h4>
+          {painting.dimensions.width} x {painting.dimensions.height}
+        </h4>
         <img id="paiting-modal-img" src={painting.url} alt={painting.title} />
       </div>
     </div>

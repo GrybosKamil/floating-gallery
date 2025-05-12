@@ -1,7 +1,7 @@
 import { useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Painting } from "../types/paiting.types";
+import { Painting } from "../../types/paiting.types";
 
 export function Painting3D({ painting }: { painting: Painting }) {
   const meshRef = useRef<THREE.Mesh>(null);
