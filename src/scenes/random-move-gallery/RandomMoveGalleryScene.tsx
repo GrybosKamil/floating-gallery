@@ -4,9 +4,9 @@ import { useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import * as THREE from "three";
 import { Painting } from "../../types/painting.types";
-import { FloatingPainting3D } from "../../components/painting/FloatingPainting3D";
 import { PaintingModal } from "../../components/painting/PaintingModal";
 import { PAINTINGS } from "../../components/painting/Paintings";
+import { FloatingPainting3D } from "../../components/painting/FloatingPainting3D";
 
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
