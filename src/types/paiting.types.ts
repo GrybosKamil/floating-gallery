@@ -1,5 +1,5 @@
 export type Painting = {
-  id: number;
+  id?: number;
   title: string;
   year: number;
   url: string;

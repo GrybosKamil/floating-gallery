@@ -37,15 +37,15 @@ export function RandomeMoveGalleryScene() {
     <>
       <Canvas style={{ background: backgroundColor }}>
         <ambientLight intensity={0.5} />
-        <OrbitControls position={controlPosition} />
+        <OrbitControls position0={controlPosition} />
 
         {PAITINGS.map((painting) => (
           <ErrorBoundary
             FallbackComponent={ErrorFallback}
-            key={painting.id + "-error"}
+            key={painting.url + "-error"}
           >
             <FloatingPaiting3D
-              key={painting.id}
+              key={painting.url}
               painting={painting}
               onClick={() => handlePaintingClick(painting)}
             />
