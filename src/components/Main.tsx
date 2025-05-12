@@ -1,5 +1,5 @@
-import { RandomeMoveGalleryScene } from "../scenes/random-move-gallery/RandomMoveGalleryScene";
+import { RandomMoveGalleryScene } from "../scenes/random-move-gallery/RandomMoveGalleryScene";
 
 export function Main() {
-  return <RandomeMoveGalleryScene />;
+  return <RandomMoveGalleryScene />;
 }
