@@ -9,6 +9,8 @@ const SPACE_LIMITS = {
   z: { min: -5, max: 5 },
 };
 
+const PROPORTIONS = 0.02;
+
 export type FloatingPainting3DProps = {
   painting: Painting;
   initialPosition?: THREE.Vector3;
@@ -27,9 +29,11 @@ export function FloatingPainting3D({
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useLoader(THREE.TextureLoader, painting.url);
 
+  const ratio = painting.dimensions.width / painting.dimensions.height;
+
   const [dimensions] = useState({
-    width: painting.dimensions.width / painting.dimensions.height,
-    height: 1,
+    width: ratio * painting.dimensions.width * PROPORTIONS,
+    height: painting.dimensions.height * PROPORTIONS,
   });
 
   const rotationDirection = generateRotationDirection();
