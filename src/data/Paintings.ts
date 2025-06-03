@@ -170,4 +170,16 @@ export const PAINTINGS: Painting[] = [
   //   year: 2020,
   //   dimensions: { width: 70, height: 50 },
   // },
+  {
+    url: "https://i.postimg.cc/jjZyv1dY/My-poppies-2025.jpg",
+    title: "My poppies",
+    year: 2025,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/d0q82FF9/Kwiaty-polne-My-Poppies-2025.jpg",
+    title: "Kwiaty polne - My poppies",
+    year: 2025,
+    dimensions: { width: 29.7, height: 21 },
+  },
 ];
