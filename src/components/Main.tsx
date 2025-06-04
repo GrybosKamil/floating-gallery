@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SurroundingCircleGalleryScene } from "../scenes/surrounding-circle-gallery/SurroundingCircleGalleryScene";
 import { RandomMoveGalleryScene } from "../scenes/random-move-gallery/RandomMoveGalleryScene";
+import { RoomWallsGalleryScene } from "../scenes/room-walls-gallery/RoomWallsGalleryScene";
 
 export function Main() {
   const [scene, setScene] = useState("circle");
@@ -8,6 +9,9 @@ export function Main() {
 
   let SceneComponent;
   switch (scene) {
+    case "room-walls":
+      SceneComponent = RoomWallsGalleryScene;
+      break;
     case "random":
       SceneComponent = RandomMoveGalleryScene;
       break;
@@ -63,8 +67,9 @@ export function Main() {
         {!panelMinimized && (
           <label>
             Choose Gallery Scene:{" "}
-            <select value={scene} onChange={e => setScene(e.target.value)}>
+            <select value={scene} onChange={(e) => setScene(e.target.value)}>
               <option value="circle">Surrounding Circle</option>
+              <option value="room-walls">Room Walls</option>
               <option value="random">Random Move</option>
             </select>
           </label>
