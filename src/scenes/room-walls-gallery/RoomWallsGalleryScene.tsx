@@ -1,4 +1,4 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useMemo, useState } from "react";
 import { ErrorBoundary } from "react-error-boundary";
@@ -13,6 +13,9 @@ const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
 const PAINTINGS_MARGIN = 0.5;
 const WIDTH_SCALE = 1.5;
+
+const ITEMS_PER_ROW = 7;
+const ROW_MARGIN = 2;
 
 function splitIntoRows<T>(array: T[], itemsPerRow: number): T[][] {
   const rows: T[][] = [];
@@ -45,8 +48,6 @@ export function RoomWallsGalleryScene() {
 
   const randomizedPaintings = useMemo(() => shuffleArray(PAINTINGS), []);
 
-  const ITEMS_PER_ROW = 4;
-  const ROW_MARGIN = 2;
   const rows = useMemo(
     () => splitIntoRows(randomizedPaintings, ITEMS_PER_ROW),
     [randomizedPaintings]
@@ -106,13 +107,58 @@ export function RoomWallsGalleryScene() {
     setSelectedPainting(null);
   };
 
+  const galleryDepth = -5;
+  const galleryWidth = useMemo(() => {
+    return Math.max(
+      ...rows.map(
+        (row) =>
+          row.reduce(
+            (sum, p) => sum + (p.dimensions.width ?? 1) * WIDTH_SCALE,
+            0
+          ) +
+          PAINTINGS_MARGIN * (row.length - 1)
+      ),
+      1
+    );
+  }, [rows]);
+
+  const galleryHeight = useMemo(() => {
+    return (
+      rows.reduce(
+        (sum, row) =>
+          sum +
+          Math.max(
+            ...row.map((p) => (p.dimensions.height ?? 1) * WIDTH_SCALE),
+            1
+          ),
+        0
+      ) +
+      ROW_MARGIN * (rows.length - 1)
+    );
+  }, [rows]);
+
+  const cameraZ = useMemo(() => {
+    const fov = 50; // default
+    const aspect = window.innerWidth / window.innerHeight;
+    const maxDim = Math.max(galleryWidth / aspect, galleryHeight);
+    return (
+      Math.abs(galleryDepth) +
+      maxDim / (2 * Math.tan((fov * Math.PI) / 360)) +
+      2
+    );
+  }, [galleryWidth, galleryHeight, galleryDepth]);
+
   const canvaScene = useMemo(() => {
     const controlPosition = new THREE.Vector3(0, 0, 0);
 
     return (
       <Canvas style={{ background: backgroundColor }}>
+        <PerspectiveCamera makeDefault fov={50} position={[0, 0, cameraZ]} />
         <ambientLight intensity={0.5} />
-        <OrbitControls position0={controlPosition} />
+        <OrbitControls
+          target={[0, 0, galleryDepth]}
+          position0={controlPosition}
+        />
 
         {randomizedPaintings.map((painting, idx) => (
           <ErrorBoundary
@@ -130,7 +176,13 @@ export function RoomWallsGalleryScene() {
         ))}
       </Canvas>
     );
-  }, [backgroundColor, randomizedPaintings, wallPositions]);
+  }, [
+    backgroundColor,
+    cameraZ,
+    galleryDepth,
+    randomizedPaintings,
+    wallPositions,
+  ]);
 
   return (
     <>

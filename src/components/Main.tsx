@@ -1,11 +1,36 @@
-import { useState } from "react";
-import { SurroundingCircleGalleryScene } from "../scenes/surrounding-circle-gallery/SurroundingCircleGalleryScene";
+import { useEffect, useState } from "react";
 import { RandomMoveGalleryScene } from "../scenes/random-move-gallery/RandomMoveGalleryScene";
 import { RoomWallsGalleryScene } from "../scenes/room-walls-gallery/RoomWallsGalleryScene";
+import { SurroundingCircleGalleryScene } from "../scenes/surrounding-circle-gallery/SurroundingCircleGalleryScene";
+
+const SCENES = ["circle", "room-walls", "random"] as const;
+type SceneType = (typeof SCENES)[number];
 
 export function Main() {
-  const [scene, setScene] = useState("circle");
+  function getInitialScene(saveScene: boolean): SceneType {
+    if (saveScene) {
+      const saved = localStorage.getItem("galleryScene");
+      if (saved && SCENES.includes(saved as SceneType))
+        return saved as SceneType;
+    }
+    return SCENES[Math.floor(Math.random() * SCENES.length)];
+  }
+
+  const [saveScene, setSaveScene] = useState(() => {
+    return localStorage.getItem("gallerySaveScene") === "true";
+  });
+
+  const [scene, setScene] = useState<SceneType>(() =>
+    getInitialScene(saveScene)
+  );
   const [panelMinimized, setPanelMinimized] = useState(false);
+
+  useEffect(() => {
+    if (saveScene) {
+      localStorage.setItem("galleryScene", scene);
+    }
+    localStorage.setItem("gallerySaveScene", saveScene ? "true" : "false");
+  }, [scene, saveScene]);
 
   let SceneComponent;
   switch (scene) {
@@ -39,7 +64,7 @@ export function Main() {
           boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
           padding: panelMinimized ? 6 : 12,
           zIndex: 10,
-          minWidth: panelMinimized ? 32 : 220,
+          minWidth: panelMinimized ? 32 : 260,
           minHeight: 32,
           display: "flex",
           alignItems: "center",
@@ -65,14 +90,28 @@ export function Main() {
           {panelMinimized ? "➕" : "➖"}
         </button>
         {!panelMinimized && (
-          <label>
-            Choose Gallery Scene:{" "}
-            <select value={scene} onChange={(e) => setScene(e.target.value)}>
-              <option value="circle">Surrounding Circle</option>
-              <option value="room-walls">Room Walls</option>
-              <option value="random">Random Move</option>
-            </select>
-          </label>
+          <>
+            <label style={{ marginRight: 12 }}>
+              Choose Gallery Scene:{" "}
+              <select
+                value={scene}
+                onChange={(e) => setScene(e.target.value as SceneType)}
+              >
+                <option value="circle">Surrounding Circle</option>
+                <option value="room-walls">Room Walls</option>
+                <option value="random">Random Move</option>
+              </select>
+            </label>
+            <label style={{ display: "flex", alignItems: "center", gap: 4 }}>
+              <input
+                type="checkbox"
+                checked={saveScene}
+                onChange={(e) => setSaveScene(e.target.checked)}
+                style={{ marginRight: 4 }}
+              />
+              Save selection
+            </label>
+          </>
         )}
       </div>
       <div style={{ flex: 1, minHeight: 0 }}>
