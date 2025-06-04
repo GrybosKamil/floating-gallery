@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import * as THREE from "three";
 import { Painting } from "../../types/painting.types";
 
+const PROPORTIONS = 1;
+
 export function Painting3D({
   painting,
   position = new THREE.Vector3(0, 0, 0),
@@ -17,11 +19,12 @@ export function Painting3D({
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useLoader(THREE.TextureLoader, painting.url);
 
-  const [dimensions] = useState({
-    width: painting.dimensions.width / painting.dimensions.height,
-    height: 1,
-  });
+  const ratio = painting.dimensions.width / painting.dimensions.height;
 
+  const [dimensions] = useState({
+    width: ratio * painting.dimensions.width * PROPORTIONS,
+    height: painting.dimensions.height * PROPORTIONS,
+  });
   return (
     <mesh
       ref={meshRef}

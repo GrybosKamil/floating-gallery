@@ -11,7 +11,8 @@ import { Painting } from "../../types/painting.types";
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
-const PAINTINGS_MARGIN = 0.0;
+const PAINTINGS_MARGIN = 0.5; // Set a reasonable margin between paintings
+const WIDTH_SCALE = 1.5; // Scale down widths for layout
 
 export function SurroundingCircleGalleryScene() {
   const [selectedPainting, setSelectedPainting] = useState<Painting | null>(
@@ -25,11 +26,17 @@ export function SurroundingCircleGalleryScene() {
     ? DARK_MODE_BACKGROUND_COLOR
     : LIGHT_MODE_BACKGROUND_COLOR;
 
-  // Choose a radius large enough for all paintings
-  const radius = 5;
+  const scaledWidths = PAINTINGS.map(
+    (p) => (p.dimensions.width ?? 1) * WIDTH_SCALE
+  );
+  const totalArc = scaledWidths.reduce(
+    (sum, width) => sum + width + PAINTINGS_MARGIN,
+    0
+  );
+  const radius = totalArc / (2 * Math.PI);
 
   const circlePositions = useMemo(
-    () => getCirclePositions(PAINTINGS, radius),
+    () => getCirclePositions(PAINTINGS, radius, WIDTH_SCALE, PAINTINGS_MARGIN),
     [radius]
   );
 
@@ -82,17 +89,15 @@ function ErrorFallback({ error }: { error: Error }) {
   return <></>;
 }
 
-function getCirclePositions(paintings: Painting[], radius: number) {
-  // Assume each painting has a width property (fallback to 1 if not)
-  const widths = paintings.map((p) => p.dimensions.width ?? 1);
+function getCirclePositions(
+  paintings: Painting[],
+  radius: number,
+  widthScale = 1,
+  margin = 0
+) {
+  const widths = paintings.map((p) => (p.dimensions.width ?? 1) * widthScale);
 
-  // Calculate total arc length needed
-  const totalArc = widths.reduce(
-    (sum, width) => sum + width + PAINTINGS_MARGIN,
-    0
-  );
-
-  // Calculate angle per unit of arc
+  const totalArc = widths.reduce((sum, width) => sum + width + margin, 0);
   const anglePerUnit = (2 * Math.PI) / totalArc;
 
   let currentAngle = 0;
@@ -101,7 +106,7 @@ function getCirclePositions(paintings: Painting[], radius: number) {
     const angle = currentAngle + (width / 2) * anglePerUnit;
     const x = Math.sin(angle) * radius;
     const z = Math.cos(angle) * radius;
-    currentAngle += (width + PAINTINGS_MARGIN) * anglePerUnit;
+    currentAngle += (width + margin) * anglePerUnit;
     return {
       position: new THREE.Vector3(x, 0, z),
       rotation: new THREE.Euler(0, angle, 0),
