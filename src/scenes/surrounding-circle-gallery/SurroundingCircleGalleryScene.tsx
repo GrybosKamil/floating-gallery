@@ -11,8 +11,8 @@ import { Painting } from "../../types/painting.types";
 const LIGHT_MODE_BACKGROUND_COLOR = "#fafafa";
 const DARK_MODE_BACKGROUND_COLOR = "#2a2b2e";
 
-const PAINTINGS_MARGIN = 0.5; // Set a reasonable margin between paintings
-const WIDTH_SCALE = 1.5; // Scale down widths for layout
+const PAINTINGS_MARGIN = 0.5;
+const WIDTH_SCALE = 1.5;
 
 export function SurroundingCircleGalleryScene() {
   const [selectedPainting, setSelectedPainting] = useState<Painting | null>(

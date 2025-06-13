@@ -138,7 +138,7 @@ export function RoomWallsGalleryScene() {
   }, [rows]);
 
   const cameraZ = useMemo(() => {
-    const fov = 50; // default
+    const fov = 50; 
     const aspect = window.innerWidth / window.innerHeight;
     const maxDim = Math.max(galleryWidth / aspect, galleryHeight);
     return (

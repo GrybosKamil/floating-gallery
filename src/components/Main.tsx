@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import { RandomMoveGalleryScene } from "../scenes/random-move-gallery/RandomMoveGalleryScene";
 import { RoomWallsGalleryScene } from "../scenes/room-walls-gallery/RoomWallsGalleryScene";
 import { SurroundingCircleGalleryScene } from "../scenes/surrounding-circle-gallery/SurroundingCircleGalleryScene";
+// import { FullRoomGalleryScene } from "../scenes/full-room-gallery/FullRoomGalleryScene";
 
-const SCENES = ["circle", "room-walls", "random"] as const;
+const SCENES = [
+  // "full-room",
+  "room-walls",
+  "circle",
+  "random",
+] as const;
 type SceneType = (typeof SCENES)[number];
 
 export function Main() {
@@ -34,6 +40,9 @@ export function Main() {
 
   let SceneComponent;
   switch (scene) {
+    // case "full-room":
+    //   SceneComponent = FullRoomGalleryScene;
+    //   break;
     case "room-walls":
       SceneComponent = RoomWallsGalleryScene;
       break;
@@ -97,8 +106,9 @@ export function Main() {
                 value={scene}
                 onChange={(e) => setScene(e.target.value as SceneType)}
               >
-                <option value="circle">Surrounding Circle</option>
+                {/* <option value="full-room">Full Room</option> */}
                 <option value="room-walls">Room Walls</option>
+                <option value="circle">Surrounding Circle</option>
                 <option value="random">Random Move</option>
               </select>
             </label>
