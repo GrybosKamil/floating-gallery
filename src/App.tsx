@@ -1,5 +1,5 @@
-import { GalleryScene } from "./components/GalleryScene";
+import { Main } from "./components/Main";
 
 export default function App() {
-  return <GalleryScene />;
+  return <Main />;
 }

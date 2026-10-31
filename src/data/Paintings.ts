@@ -1,0 +1,185 @@
+import { Painting } from "../types/painting.types";
+
+export const PAINTINGS: Painting[] = [
+  {
+    url: "https://i.postimg.cc/473LMHsc/Diana-2024.jpg",
+    title: "Diana",
+    year: 2024,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/HJdPwPNB/Zmeczony-Kamil-2024.jpg",
+    title: "Zmeczony Kamil",
+    year: 2024,
+    dimensions: { width: 40, height: 40 },
+  },
+  {
+    url: "https://i.postimg.cc/t1kv2NQy/Samotnosc-duszy-2024.jpg",
+    title: "Samotnosc duszy",
+    year: 2024,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/cvQb8NFv/Koci-demon-2024.jpg",
+    title: "Koci demon",
+    year: 2024,
+    dimensions: { width: 80, height: 60 },
+  },
+  {
+    url: "https://i.postimg.cc/VJyh6NWy/Luna-z-bombkami-2024.jpg",
+    title: "Luna z bombkami",
+    year: 2024,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/fJSFDdXj/Marzenie-2024.jpg",
+    title: "Marzenie",
+    year: 2024,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/PNRcgyL5/Madness-3-2024.jpg",
+    title: "Madness III",
+    year: 2024,
+    dimensions: { width: 80, height: 60 },
+  },
+  // {
+  //   title: "Storm of the Soul",
+  //   year: 0,
+  //   dimensions: { width: 60, height: 40 },
+  // },
+  // {
+  //   title: "W szklarni pani Ani",
+  //   year: 2024,
+  //   dimensions: { width: 40, height: 40 },
+  // },
+  {
+    url: "https://i.postimg.cc/3WvCwFSR/Zonkile-2024.jpg",
+    title: "Zonkile",
+    year: 2024,
+    dimensions: { width: 30, height: 30 },
+  },
+  {
+    url: "https://i.postimg.cc/TyJFBXbz/Kosmo-akwarium-2024.jpg",
+    title: "Kosmo akwarium",
+    year: 2024,
+    dimensions: { width: 40, height: 40 },
+  },
+  {
+    url: "https://i.postimg.cc/QB3v6MFg/Madness-2-2024.jpg",
+    title: "Madness II",
+    year: 2024,
+    dimensions: { width: 90, height: 60 },
+  },
+  {
+    url: "https://i.postimg.cc/k28kFSgX/Oni-patrza-2024.jpg",
+    title: "Oni patrza",
+    year: 2024,
+    dimensions: { width: 30, height: 24 },
+  },
+  {
+    url: "https://i.postimg.cc/9rs67bVn/Kroliczek-2023.jpg",
+    title: "Kroliczek",
+    year: 2023,
+    dimensions: { width: 30, height: 24 },
+  },
+  {
+    url: "https://i.postimg.cc/SJX0R309/Koty-nocy-2023.jpg",
+    title: "Koty nocy",
+    year: 2023,
+    dimensions: { width: 80, height: 60 },
+  },
+  {
+    url: "https://i.postimg.cc/HjvDpHNH/Kamus-z-Bodziem-2023.jpg",
+    title: "Kamus z Bodziem",
+    year: 2023,
+    dimensions: { width: 120, height: 80 },
+  },
+  {
+    url: "https://i.postimg.cc/30RsgbdP/Gucio-z-ogorkiem-2023.jpg",
+    title: "Gucio z ogorkiem",
+    year: 2023,
+    dimensions: { width: 50, height: 50 },
+  },
+  {
+    url: "https://i.postimg.cc/Dmw3kmBB/Kompozycja-z-tabletek-2023.jpg",
+    title: "Kompozycja z tabletek",
+    year: 2023,
+    dimensions: { width: 80, height: 60 },
+  },
+  {
+    url: "https://i.postimg.cc/B85fsKrw/Bodzio-z-sasiadem-2022.jpg",
+    title: "Bodzio z sasiadem",
+    year: 2022,
+    dimensions: { width: 30, height: 30 },
+  },
+  {
+    url: "https://i.postimg.cc/1g11LHjq/Zamyslona-2022.jpg",
+    title: "Zamyslona",
+    year: 2022,
+    dimensions: { width: 80, height: 60 },
+  },
+  {
+    url: "https://i.postimg.cc/BLq9vvsZ/Wciaz-zywa-w-srodku-martwa-2020.jpg",
+    title: "Still alive, dead inside",
+    year: 2023,
+    dimensions: { width: 60, height: 70 },
+  },
+  // {
+  //   title: "Purple satin",
+  //   year: 2020,
+  //   dimensions: { width: 120, height: 80 },
+  // },
+  // {
+  //   title: "Kadr filmowy III",
+  //   year: 2019,
+  //   dimensions: { width: 150, height: 100 },
+  // },
+  // {
+  //   title: "My madness",
+  //   year: 2020,
+  //   dimensions: { width: 80, height: 60 },
+  // },
+  // {
+  //   title: "Z drugiej reki",
+  //   year: 2019,
+  //   dimensions: { width: 80, height: 60 },
+  // },
+  // {
+  //   title: "Kadr filmowy II",
+  //   year: 2019,
+  //   dimensions: { width: 150, height: 100 },
+  // },
+  // {
+  //   title: "Kadr filmowy",
+  //   year: 2019,
+  //   dimensions: { width: 150, height: 100 },
+  // },
+  // {
+  //   title: "Zapach kobiety",
+  //   year: 2019,
+  //   dimensions: { width: 65, height: 50 },
+  // },
+  // {
+  //   title: "Zaopiekuj sie mna",
+  //   year: 2020,
+  //   dimensions: { width: 80, height: 60 },
+  // },
+  // {
+  //   title: "Koty w glowie",
+  //   year: 2020,
+  //   dimensions: { width: 70, height: 50 },
+  // },
+  {
+    url: "https://i.postimg.cc/jjZyv1dY/My-poppies-2025.jpg",
+    title: "My poppies",
+    year: 2025,
+    dimensions: { width: 29.7, height: 21 },
+  },
+  {
+    url: "https://i.postimg.cc/d0q82FF9/Kwiaty-polne-My-Poppies-2025.jpg",
+    title: "Kwiaty polne - My poppies",
+    year: 2025,
+    dimensions: { width: 29.7, height: 21 },
+  },
+];

@@ -1,7 +1,7 @@
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import * as THREE from "three";
-import { Painting } from "./Painting";
+import { Painting } from "../../types/painting.types";
 
 const SPACE_LIMITS = {
   x: { min: -5, max: 5 },
@@ -9,25 +9,31 @@ const SPACE_LIMITS = {
   z: { min: -5, max: 5 },
 };
 
+const PROPORTIONS = 0.02;
+
 export type FloatingPainting3DProps = {
   painting: Painting;
   initialPosition?: THREE.Vector3;
   initialRotation?: THREE.Euler;
   initialVelocity?: THREE.Vector3;
+  onClick: (painting: Painting) => void;
 };
 
-export function FloatingPaiting3D({
+export function FloatingPainting3D({
   painting,
   initialPosition,
   initialRotation,
   initialVelocity,
+  onClick,
 }: FloatingPainting3DProps) {
   const meshRef = useRef<THREE.Mesh>(null);
   const texture = useLoader(THREE.TextureLoader, painting.url);
 
+  const ratio = painting.dimensions.width / painting.dimensions.height;
+
   const [dimensions] = useState({
-    width: painting.dimensions.width / painting.dimensions.height,
-    height: 1,
+    width: ratio * painting.dimensions.width * PROPORTIONS,
+    height: painting.dimensions.height * PROPORTIONS,
   });
 
   const rotationDirection = generateRotationDirection();
@@ -77,6 +83,7 @@ export function FloatingPaiting3D({
       name={painting.title}
       position={position}
       rotation={rotation}
+      onClick={() => onClick(painting)}
     >
       <boxGeometry args={[dimensions.width, dimensions.height, 0.1]} />
       <meshBasicMaterial attach="material-0" color="black" />
@@ -101,7 +108,7 @@ function generateRotationDirection() {
   return new THREE.Euler(
     getRandomNumberInRange(-0.005, 0.005),
     getRandomNumberInRange(-0.005, 0.005),
-    getRandomNumberInRange(-0.005, 0.005),
+    getRandomNumberInRange(-0.005, 0.005)
   );
 }
 
@@ -109,7 +116,7 @@ function generateInitialRotation() {
   return new THREE.Euler(
     getRandomNumberInRange(0, Math.PI * 2),
     getRandomNumberInRange(0, Math.PI * 2),
-    getRandomNumberInRange(0, Math.PI * 2),
+    getRandomNumberInRange(0, Math.PI * 2)
   );
 }
 
@@ -117,7 +124,7 @@ function generateInitialPosition() {
   return new THREE.Vector3(
     getRandomNumberInDefaultRange(),
     getRandomNumberInDefaultRange(),
-    getRandomNumberInDefaultRange(),
+    getRandomNumberInDefaultRange()
   );
 }
 
@@ -125,6 +132,6 @@ function generateInitialVelocity() {
   return new THREE.Vector3(
     getRandomNumberInRange(-0.01, 0.01),
     getRandomNumberInRange(-0.01, 0.01),
-    getRandomNumberInRange(-0.01, 0.01),
+    getRandomNumberInRange(-0.01, 0.01)
   );
 }
